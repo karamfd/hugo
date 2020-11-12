@@ -1,0 +1,4 @@
+a {
+  /* Overrides bulma css framework */
+  color: firebrick !important;
+}

@@ -1,0 +1,41 @@
+<nav>
+  <h2>navigation</h2>
+
+  <ul>
+
+    <!--
+      Requires additional front matter information for each file in the content folder:
+
+      menu: "main"
+      weight: 1
+    -->
+
+    {{ range .Site.Menus.main }}
+    <li {{ if or ($.IsMenuCurrent "main" .) }} class="active" {{ end }}>
+      <a href="{{ .URL }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+
+    <!--
+      The code below is only needed when the navigation menu is manually created in the configuration file
+    -->
+
+    <!-- {{ range .Site.Menus.main }}
+    <li>
+      {{ $active := or ($.IsMenuCurrent "main" .) }}
+      {{ $active = or $active (eq .Name $.Title) }}
+      <a href="{{ .URL }}" {{ if $active }} class="active"
+        {{ end }}>{{ .Name }}</a>
+    </li>
+    {{ end }} -->
+
+    <!-- {{ range .Site.Menus.main }}
+    <li>
+      {{ $active := . }}
+      {{ $active = eq .Name $.Title }}
+      <a href="{{ .URL }}" {{ if $active }} class="active"
+        {{ end }}>{{ .Name }}</a>
+    </li>
+    {{ end }} -->
+  </ul>
+</nav>

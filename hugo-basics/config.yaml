@@ -1,0 +1,50 @@
+baseURL: "http://example.org/"
+languageCode: "en-ca"
+title: "My New Hugo Site"
+enableEmoji: true
+# sectionPagesMenu: "main"
+# menu:
+#   main:
+#     - identifier: "home"
+#       name: "home"
+#       url: "/"
+#       weight: 1
+
+#     - identifier: "about"
+#       name: "about"
+#       url: "/about"
+#       weight: 2
+
+#     - identifier: "blog"
+#       name: "blog"
+#       url: "/blog"
+#       weight: 3
+
+#     - identifier: "uses"
+#       name: "uses"
+#       url: "/uses"
+#       weight: 4
+
+#     - identifier: "contact"
+#       name: "contact"
+#       url: "/contact"
+#       weight: 5
+
+# Display HTML on the page as written in the content folder
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Disable taxonomies to remove warnings when running locally
+disableKinds:
+  - taxonomy
+  - term
+  - rss
+
+# Copyright parameters
+params:
+  copyright: "copyright &copy; 2020. website design by"
+  permalink: "https://karamfd.com/"
+  # Kebab case (ex: permalink-text) is not accepted and will throw an error
+  permalink_text: "karam fahad"

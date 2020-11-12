@@ -1,0 +1,8 @@
+{{ if .Site.Params.copyright }}
+  <footer>
+    <h2>footer</h2>
+    <small>
+      {{ .Site.Params.Copyright | safeHTML }} <a href="{{ .Site.Params.permalink }}">{{ .Site.Params.permalink_text }}</a>
+    </small>
+  </footer>
+{{ end }}

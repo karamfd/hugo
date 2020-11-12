@@ -1,0 +1,32 @@
+{{/* This page can be named either index.html or home.html  */}}
+{{ define "main" }}
+<div class="wrapper">
+  {{/* Output custom frontend matter variable data from content/_index.md */}}
+  {{/* <p>{{ .Params.text }}</p> */}}
+
+  <h2>display content with a for loop</h2>
+
+  {{ range $hero := .Params.content }}
+  <img src="{{ $hero.image }}" alt="">
+  <p>{{ $hero.headline }}</p>
+  {{ end }}
+</div>
+
+<div>
+  <h2>display content without a for loop</h2>
+  <img src="{{ $.Param "contentAlt.image" }}" alt="">
+  <p>{{ $.Param "contentAlt.headline" }}</p>
+</div>
+
+<div>
+  <h2>data</h2>
+  <label for="country">country:</label>
+  <input type="text" list="countries" name="country" id="country">
+  <datalist id="countries">
+    {{/* Output content from data/countries.json */}}
+    {{ range .Site.Data.countries }}
+    <option value="{{ .name }}"></option>
+    {{ end }}
+  </datalist>
+</div>
+{{ end }}

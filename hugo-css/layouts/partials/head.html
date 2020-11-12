@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <!--
+    - Pipe includes built-in features like fingerprinting and minification
+    - Apply css styling in the assets folder because it was changed from its original location in the static folder
+  -->
+  {{ $style := resources.Get "css/main.css" }}
+  {{ $components := resources.Match "css/components/*.css" }}
+  {{ range $components }}
+    {{ $style = slice $style . | resources.Concat .Name }}
+  {{ end }}
+  <!--
+    - Change the name of the css file that is displayed in the browser Network tab
+    - The network tab displays the name of the latest css file that is created only, so we're changing its name.
+  -->
+  {{ $style = slice $style | resources.Concat "all.css" | fingerprint | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <!--
+    - Default title is from config.yml
+    - You can override this title in content/_index.md
+  -->
+  <title>{{ .Title }}</title>
+</head>

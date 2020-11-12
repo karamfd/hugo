@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <div class="wrapper">
+    {{/*  Output custom frontend matter variable from content/about.md and content/uses.md  */}}
+    <p>{{ .Params.text }}</p>
+
+    <button>{{ .Params.button }}</button>
+
+    <a href="#" class="link">{{ .Params.link }}</a>
+
+    {{/* If img element exists, then output its data */}}
+    {{ if .Params.image }}
+      <img src="{{ .Params.image }}" alt="">
+    {{ end }}
+  </div>
+{{ end }}

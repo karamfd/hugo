@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "happy regular";
+  src: url(../fonts/office-code-pro-regular.woff) format("woff"),
+    url(../fonts/office-code-pro-regular.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  background-color: #b9e4e4;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body > * {
+  margin: 2rem;
+}
+
+li {
+  margin: 1rem 2rem;
+}
+
+button,
+a {
+  margin-bottom: 0.5rem;
+}
+
+button,
+.link {
+  display: block;
+}
+
+nav a {
+  text-transform: capitalize;
+}
+
+a {
+  font-family: "happy regular";
+  color: currentColor;
+}
+
+a:hover,
+.active {
+  color: #e95252;
+}
