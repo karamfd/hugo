@@ -1,6 +1,7 @@
 ---
-title: "contact"
+title: "Contact"
 draft: true
+description: "karam fahad - contact"
 menu: "main"
 weight: 5
 ---
