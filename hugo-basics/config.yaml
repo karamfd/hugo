@@ -35,12 +35,18 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  # Syntax highlight: enabled by default. Themes are available on Github at https://github.com/alecthomas/chroma/tree/master/styles
+  highlight:
+    lineNos: true
+    # Option below allows you to create your own custom syntax highlighter
+    # NoClasses: false
+    style: xcode
+    tabWidth: 2
 
 # Disable taxonomies to remove warnings when running locally
 disableKinds:
   - taxonomy
   - term
-  - rss
 
 # Copyright parameters
 params:
